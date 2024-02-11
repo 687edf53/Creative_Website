@@ -104,7 +104,7 @@ header {
 .container h2.main-title {
   padding: 12px 48px;
   padding-top: 40px !important;
-  font-size: 35px;
+  font-size: 30px;
   color: var(--main-color);
   position: relative;
   display: flex;
@@ -132,6 +132,11 @@ header p {
   letter-spacing: 1px;
   font-family: Hack, sans-serif;
 }
+@media (max-width: 991px) {
+  header p {
+    width: 100%;
+  }
+}
 header .my_job {
   font-size: 35px;
   padding: 0 10px;
@@ -145,6 +150,7 @@ header .my_name {
   transition: 0.3s;
 }
 header .half-btns {
+  padding-top: 30px;
   width: fit-content;
   display: flex;
   justify-content: center;
