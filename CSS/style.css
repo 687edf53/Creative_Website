@@ -8,7 +8,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', "Noto Sans Arabic", sans-serif;
 }
 body {
   background-color: var(--light-color);
@@ -149,13 +149,16 @@ header .my_job {
   font-size: 35px;
   padding: 0 10px;
   text-decoration: uppercase;
+  font-weight: bold;
 }
 header .my_name {
-  font-size: 10px;
   padding: 0 10px;
   padding-top: 20px;
   text-decoration: uppercase;
   transition: 0.3s;
+}
+header .hidden-msg .upper, header .lower {
+  font-size: 50px !important;
 }
 header .half-btns {
   padding-top: 30px;
