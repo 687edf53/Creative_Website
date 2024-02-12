@@ -2,12 +2,16 @@
 :root {
   --section-padding: 100px;
   --main-color: black;
+  --light-color: white;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+}
+body {
+  background-color: var(--light-color);
 }
 .container {
   padding-left: 2rem;
@@ -43,6 +47,7 @@ nav {
 nav .logo {
   font-weight: bold;
   font-size: 20px;
+  color: var(--main-color);
 }
 nav .logo img {
   max-width: 100px;
@@ -77,15 +82,16 @@ nav ul.nav-links li a:hover {
   font-weight: bold;
 }
 nav ul.nav-links .mode-btn i {
+  color: var(--light-color);
   background-color: var(--main-color);
   border-radius: 50%;
   padding: 5px;
-  color: white;
+  color: var(--light-color);
   cursor: pointer;
 }
 nav .special-btn {
   background-color: var(--main-color);
-  color: white;
+  color: var(--light-color);
   border-radius: 20px;
   padding: 5px 10px;
   cursor: pointer;
@@ -100,6 +106,7 @@ header {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  color: var(--main-color);
 }
 .container h2.main-title {
   padding: 12px 48px;
@@ -110,6 +117,7 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
+  white-space: nowrap;
 }
 .container h2.main-title::before {
   content: '\e4e2';
@@ -128,9 +136,9 @@ header p {
   padding-top: 20px;
   font-size: 20px;
   width: 80%;
-  padding-bottom: 30px;
   letter-spacing: 1px;
   font-family: Hack, sans-serif;
+  color: var(--main-color);
 }
 @media (max-width: 991px) {
   header p {
@@ -165,13 +173,15 @@ header .half-btns button {
 header .half-btns button:nth-child(1) {
   border-radius: 5px 0 0 5px;
   background-color: var(--main-color);
-  color: var(--dark-color)
+  color: var(--light-color)
 }
 header .half-btns button:nth-child(1):hover {
-  background-color: var(--dark-color);
+  background-color: var(--light-color);
   color: var(--main-color)
 }
 header .half-btns button:nth-child(2) {
   border-radius: 0 5px 5px 0;
+  background-color: var(--light-color);
+  color: var(--main-color)
 }
 /* End Header */

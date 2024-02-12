@@ -1,18 +1,13 @@
-/* Start Global Rules */
-:root {
-  --text-shine: shine;
-}
-/* End Global Rules */
 /* Start Text Shine */
 .text-shine {
   position: relative;
   padding: 12px 48px;
-  color: #ffffff;
-  background: linear-gradient(to right, var(--main-color) 0, white 10%, var(--main-color) 30%);
+  color: var(--light-color);
+  background: linear-gradient(to right, var(--main-color) 0, var(--light-color) 10%, var(--main-color) 30%);
   background-position: 0;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: var(--text-shine) 2s   linear  ;
+  animation: shine 2s linear;
   animation-fill-mode: forwards;
   -webkit-text-size-adjust: none;
   font-weight: 600;
@@ -31,7 +26,7 @@
 
   100% {
     background-position: 300px;
-    -webkit-text-fill-color: white;
+    -webkit-text-fill-color: var(--main-color);
   }
 }
 /* End Text Shine */
@@ -43,7 +38,7 @@
   font-size: 2rem;
   font-family: sans-serif;
   position: relative;
-  background-color: var(--dark-color);
+  background-color: var(--light-color);
 }
 .hidden-msg div {
   position: absolute;
@@ -57,7 +52,7 @@
 
 .hidden-msg .upper {
   top: 0;
-  height: 55%;
+  height: 45%;
   color: var(--main-color);
   font-size: 20px;
   overflow: hidden;
@@ -74,13 +69,13 @@
 .hidden-msg .lower::before {
   content: '';
   opacity: 0;
-  transition: 0.5s;
+  transition: 0.2s;
   position: absolute;
   top: 7px;
   left: 0;
   width: 100%;
   height: 6px;
-  background-color: white;
+  background-color: var(--light-color);
 }
 .hidden-msg:hover .lower {
   top: 15px;
@@ -108,7 +103,7 @@
   position: absolute;
   left: 50%;
   transform: translate(-50%, -25%);
-  background-color: white;
+  background-color: var(--light-color);
   transition: 0.4s;
   z-index: 2;
 }
