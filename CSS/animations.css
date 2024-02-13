@@ -52,11 +52,11 @@
 
 .hidden-msg .upper {
   top: 0;
-  height: 45%;
+  height: 60%;
   color: var(--main-color);
   font-size: 20px;
   overflow: hidden;
-  z-index: 3;
+  z-index: 5;
 }
 
 .hidden-msg .lower {
@@ -64,27 +64,22 @@
   height: 100%;
   font-size: 20px;
   z-index: 3;
-  transition: 1s;
 }
 .hidden-msg .lower::before {
   content: '';
-  opacity: 0;
   transition: 0.2s;
   position: absolute;
   top: 7px;
   left: 0;
   width: 100%;
-  height: 6px;
+  height: 13px;
   background-color: var(--light-color);
 }
 .hidden-msg:hover .lower {
-  top: 15px;
-}
-.hidden-msg:hover .lower::before {
-  opacity: 1;
+  top: 12px;
 }
 .hidden-msg:hover .upper{
-  top: -25px
+  top: -30px
 }
 .hidden-msg:hover::before {
   opacity: 0;
@@ -107,6 +102,23 @@
   transition: 0.4s;
   z-index: 2;
 }
+.hidden-msg.arabic .upper{
+  height: 100% !important;
+  top: -20px;
+}
+.hidden-msg.arabic .lower{
+  top: -20px;
+}
+.hidden-msg.arabic:hover .upper {
+  top: -40px;
+}
+.hidden-msg.arabic:hover .lower {
+  top: 7px;
+}
+
+.hidden-msg.arabic .lower::before{
+  top: 18px;
+}
 /* End hidden message */
 
 /* Start Hidden Between Message */
@@ -126,6 +138,9 @@
   font-size: 1rem;
   transition: 0.5s;
   opacity: 0;
+}
+.hidden-between.arabic::before {
+  content: 'هل انت هنا؟'
 }
 .hidden-between:hover {
   gap: 150px;

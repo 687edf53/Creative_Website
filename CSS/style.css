@@ -77,6 +77,7 @@ nav ul.nav-links li a {
   text-decoration: none;
   color: var(--main-color);
   transition: 0.1s;
+  white-space: nowrap;
 }
 nav ul.nav-links li a:hover {
   font-weight: bold;
@@ -107,6 +108,7 @@ header {
   align-items: center;
   text-align: center;
   color: var(--main-color);
+  overflow: hidden;
 }
 .container h2.main-title {
   padding: 12px 48px;
@@ -133,7 +135,7 @@ header {
 }
 header p {
   font-weight: bold;
-  padding-top: 20px;
+  padding-top: 30px;
   font-size: 20px;
   width: 80%;
   letter-spacing: 1px;
@@ -148,17 +150,16 @@ header p {
 header .my_job {
   font-size: 35px;
   padding: 0 10px;
-  text-decoration: uppercase;
+  text-transform: capitalize;
   font-weight: bold;
 }
 header .my_name {
   padding: 0 10px;
   padding-top: 20px;
-  text-decoration: uppercase;
   transition: 0.3s;
 }
 header .hidden-msg .upper, header .lower {
-  font-size: 50px !important;
+  font-size: 30px !important;
 }
 header .half-btns {
   padding-top: 30px;

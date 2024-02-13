@@ -38,8 +38,11 @@ LangBtn.addEventListener('click', () => {
     headerTitle.textContent = 'Hello there!';
     headerName[0].textContent = 'mohamed hossam';
     headerName[1].textContent = 'mohamed hossam';
+    headerName[0].parentElement.classList.remove('arabic')
+    headerName[2].textContent = 'How are you?';
     headerJob[0].textContent = 'frontend'
     headerJob[1].textContent = 'developer'
+    headerJob[0].parentElement.classList.remove('arabic')
     headerButtons[0].textContent = 'See My Projects';
     headerButtons[1].textContent = 'See My Tasks';
     headerP.textContent = 'As a seasoned frontend developer, I specialize in transforming concepts into visually stunning and user-friendly websites. With an eye for detail and a flair for creativity'
@@ -47,8 +50,11 @@ LangBtn.addEventListener('click', () => {
     headerTitle.textContent = '!مرحبا بكم';
     headerName[0].textContent = 'محمد حسام';
     headerName[1].textContent = 'محمد حسام';
+    headerName[2].textContent = 'كيف حالك؟';
+    headerName[0].parentElement.classList.add('arabic')
     headerJob[0].textContent = 'مطور'
     headerJob[1].textContent = 'مواقع'
+    headerJob[0].parentElement.classList.add('arabic')
     headerButtons[0].textContent = 'شاهد المشاريع';
     headerButtons[1].textContent = 'شاهد المهام';
     headerP.textContent = 'باعتباري مطورًا متمرسًا للواجهة الأمامية، فأنا متخصص في تحويل المفاهيم إلى مواقع ويب مذهلة بصريًا وسهلة الاستخدام. مع الاهتمام بالتفاصيل وذوق الإبداع'
