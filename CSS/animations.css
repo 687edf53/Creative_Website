@@ -6,6 +6,7 @@
   background: linear-gradient(to right, var(--main-color) 0, var(--light-color) 10%, var(--main-color) 30%);
   background-position: 0;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine 2s linear;
   animation-fill-mode: forwards;
