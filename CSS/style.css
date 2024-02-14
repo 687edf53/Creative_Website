@@ -121,6 +121,9 @@ header {
   gap: 10px;
   white-space: nowrap;
 }
+.container h2.arabic {
+  direction: ltr;
+}
 .container h2.main-title::before {
   content: '\e4e2';
   font-family: 'Font Awesome 6 Free';
@@ -187,5 +190,8 @@ header .half-btns button:nth-child(2) {
   border-radius: 0 5px 5px 0;
   background-color: var(--light-color);
   color: var(--main-color)
+}
+header .half-btns.arabic {
+  flex-direction: row-reverse ;
 }
 /* End Header */

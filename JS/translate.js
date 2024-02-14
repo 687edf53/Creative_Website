@@ -33,6 +33,8 @@ const headerP = document.querySelector('header p')
 LangBtn.addEventListener('click', () => {
   if (LangBtn.textContent.trim() === 'arabic') {
     headerTitle.textContent = 'Hello there!';
+    headerTitle.classList.remove('arabic')
+
     headerName[0].textContent = 'mohamed hossam';
     headerName[1].textContent = 'mohamed hossam';
     headerName[0].parentElement.classList.remove('arabic')
@@ -41,26 +43,30 @@ LangBtn.addEventListener('click', () => {
     headerJob[0].textContent = 'frontend'
     headerJob[1].textContent = 'developer'
     headerJob[0].parentElement.classList.remove('arabic')
-
+    
     headerButtons[0].textContent = 'See My Projects';
     headerButtons[1].textContent = 'See My Tasks';
-
+    headerButtons[0].parentElement.classList.remove('arabic')
+    
     headerP.textContent = 'As a seasoned frontend developer, I specialize in transforming concepts into visually stunning and user-friendly websites. With an eye for detail and a flair for creativity'
   } else {
     headerTitle.textContent = '!مرحبا بكم';
-
+    headerTitle.classList.add('arabic')
+    
     headerName[0].textContent = 'محمد حسام';
     headerName[1].textContent = 'محمد حسام';
     headerName[2].textContent = 'كيف حالك؟';
     headerName[0].parentElement.classList.add('arabic')
+    
 
     headerJob[0].textContent = 'مطور'
     headerJob[1].textContent = 'مواقع'
     headerJob[0].parentElement.classList.add('arabic')
-
+    
     headerButtons[0].textContent = 'شاهد المشاريع';
     headerButtons[1].textContent = 'شاهد المهام';
-
+    headerButtons[0].parentElement.classList.add('arabic')
+    
     headerP.textContent = 'باعتباري مطورًا متمرسًا للواجهة الأمامية، فأنا متخصص في تحويل المفاهيم إلى مواقع ويب مذهلة بصريًا وسهلة الاستخدام. مع الاهتمام بالتفاصيل وذوق الإبداع'
   }
 });
