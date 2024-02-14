@@ -48,7 +48,8 @@ const setLanguage = (language) => {
 
 localStorage.setItem('bodyclass', 'arabic')
 const language = localStorage.getItem("lang") || "en"; 
-LangBtn.onclick = () => {
+LangBtn.addEventListener('click', () => {
+  const language = localStorage.getItem("lang") || "en"; 
   if (language === "en") {
     setLanguage("ar");
     localStorage.setItem("lang", "ar");
@@ -58,7 +59,8 @@ LangBtn.onclick = () => {
     localStorage.setItem("lang", "en");
     document.body.classList.remove('arabic')
   }
-}
+}) 
+
 if (language === "en") {
   document.body.classList.remove(localStorage.getItem('bodyclass'))
 } else {
