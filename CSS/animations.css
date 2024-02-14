@@ -103,21 +103,21 @@
   transition: 0.4s;
   z-index: 2;
 }
-.hidden-msg.arabic .upper{
+body.arabic .hidden-msg .upper{
   height: 100% !important;
   top: -20px;
 }
-.hidden-msg.arabic .lower{
+body.arabic .hidden-msg .lower{
   top: -20px;
 }
-.hidden-msg.arabic:hover .upper {
+body.arabic .hidden-msg:hover .upper {
   top: -40px;
 }
-.hidden-msg.arabic:hover .lower {
+body.arabic .hidden-msg:hover .lower {
   top: 7px;
 }
 
-.hidden-msg.arabic .lower::before{
+body.arabic .hidden-msg .lower::before{
   top: 18px;
 }
 /* End hidden message */
@@ -140,7 +140,7 @@
   transition: 0.5s;
   opacity: 0;
 }
-.hidden-between.arabic::before {
+body.arabic .hidden-between::before {
   content: 'هل انت هنا؟'
 }
 .hidden-between:hover {

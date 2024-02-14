@@ -101,6 +101,7 @@ nav .special-btn:hover {
   font-weight: bold;
 }
 /* End Nav */
+
 /* Start Header */
 header {
   display: flex;
@@ -121,7 +122,7 @@ header {
   gap: 10px;
   white-space: nowrap;
 }
-.container h2.arabic {
+body.arabic .container h2 {
   direction: ltr;
 }
 .container h2.main-title::before {
@@ -191,7 +192,7 @@ header .half-btns button:nth-child(2) {
   background-color: var(--light-color);
   color: var(--main-color)
 }
-header .half-btns.arabic {
+body.arabic header .half-btns {
   flex-direction: row-reverse ;
 }
 /* End Header */
