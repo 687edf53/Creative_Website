@@ -5,13 +5,12 @@ const translations = {
     "home" : "الرئيسية",
     "about" : "عني",
     "contact" : "اتصل بنا",
-    "arabic" : "عربي",
-    "english" : "الإنجليزية",
+    "arabic" : "الإنجليزية",
     "hello-msg" : "!مرحبا بك",
     "hidden-msg" : "كيف حالك؟",
     "name" : "محمد حسام",
-    "frontend" : "مواقع",
-    "developer" : "مطور",
+    "developer" : "مواقع",
+    "frontend" : "مطور",
     "projects" : "تصفح مشاريعي",
     "tasks" : "تصفح مهامي",
     "my-info" : "باعتباري مطورًا متمرسًا للواجهة الأمامية، فأنا متخصص في تحويل المفاهيم إلى مواقع ويب مذهلة بصريًا وسهلة الاستخدام. مع الاهتمام بالتفاصيل وذوق الإبداع",
@@ -21,7 +20,6 @@ const translations = {
     "about" : "About",
     "contact" : "Contact",
     "arabic" : "arabic",
-    "english" : "english" ,
     "hello-msg" : "Hello There!",
     "name" : "Mohamed Hossam",
     "hidden-msg" : "How are you?",
@@ -47,8 +45,10 @@ const setLanguage = (language) => {
   });
   document.dir = language === "ar" ? "rtl" : "ltr";
 };
+
+localStorage.setItem('bodyclass', 'arabic')
+const language = localStorage.getItem("lang") || "en"; 
 LangBtn.onclick = () => {
-  const language = localStorage.getItem("lang") || "en"; 
   if (language === "en") {
     setLanguage("ar");
     localStorage.setItem("lang", "ar");
@@ -58,4 +58,9 @@ LangBtn.onclick = () => {
     localStorage.setItem("lang", "en");
     document.body.classList.remove('arabic')
   }
+}
+if (language === "en") {
+  document.body.classList.remove(localStorage.getItem('bodyclass'))
+} else {
+  document.body.classList.add(localStorage.getItem('bodyclass'))
 }
