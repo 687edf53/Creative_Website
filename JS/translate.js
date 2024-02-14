@@ -1,75 +1,61 @@
-// Start Variables
-
-// Navbar
-const navLinks = document.querySelectorAll('.nav-links li a');
 const LangBtn = document.querySelector('.special-btn');
 
-// Header
-const headerName = document.querySelectorAll('header .my_name .hidden-msg > div');
-const headerButtons = document.querySelectorAll('header .half-btns button');
-const headerJob = document.querySelectorAll('header .my_job > span')
-const headerP = document.querySelector('header p')
-
-// End Variables
-
-// Start Translation
-LangBtn.addEventListener('click', () => {
-  if (LangBtn.textContent.trim() === 'arabic') {
-
-    // Nav
-    LangBtn.textContent = 'انجليزية';
+const translations = {
+  ar : {
+    "home" : "الرئيسية",
+    "about" : "عني",
+    "contact" : "اتصل بنا",
+    "arabic" : "عربي",
+    "english" : "الإنجليزية",
+    "hello-msg" : "!مرحبا بك",
+    "hidden-msg" : "كيف حالك؟",
+    "name" : "محمد حسام",
+    "frontend" : "مواقع",
+    "developer" : "مطور",
+    "projects" : "تصفح مشاريعي",
+    "tasks" : "تصفح مهامي",
+    "my-info" : "باعتباري مطورًا متمرسًا للواجهة الأمامية، فأنا متخصص في تحويل المفاهيم إلى مواقع ويب مذهلة بصريًا وسهلة الاستخدام. مع الاهتمام بالتفاصيل وذوق الإبداع",
+  },
+  en: {
+    "home" : "Home",
+    "about" : "About",
+    "contact" : "Contact",
+    "arabic" : "arabic",
+    "english" : "english" ,
+    "hello-msg" : "Hello There!",
+    "name" : "Mohamed Hossam",
+    "hidden-msg" : "How are you?",
+    "frontend" : "Frontend",
+    "developer" : "Developer",
+    "projects" : "See My Projects",
+    "tasks" : "See My Tasks",
+    "my-info" : "As a seasoned frontend developer, I specialize in transforming concepts into visually stunning and user-friendly websites. With an eye for detail and a flair for creativity",
     
-    navLinks[0].textContent = 'الرئيسية';
-    navLinks[1].textContent = 'عنا';
-    navLinks[2].textContent = 'تواصل معنا';
-
-    // Header
-    headerTitle.textContent = '!مرحبا بكم';
-
-    headerName[0].textContent = 'محمد حسام';
-    headerName[1].textContent = 'محمد حسام';
-    headerName[2].textContent = 'كيف حالك؟';
-
-    headerJob[0].textContent = 'مطور'
-    headerJob[1].textContent = 'مواقع'
-
-    headerButtons[0].textContent = 'شاهد المشاريع';
-    headerButtons[1].textContent = 'شاهد المهام';
-    
-    headerP.textContent = 'باعتباري مطورًا متمرسًا للواجهة الأمامية، فأنا متخصص في تحويل المفاهيم إلى مواقع ويب مذهلة بصريًا وسهلة الاستخدام. مع الاهتمام بالتفاصيل وذوق الإبداع'
-
-    document.body.classList.add('arabic')
-
-    document.documentElement.dir = 'rtl'
-    document.documentElement.lang = 'ar'
-
-  } else {
-
-    // Nav
-    LangBtn.textContent = 'arabic';
-    navLinks[0].textContent = 'Home';
-    navLinks[1].textContent = 'About';
-    navLinks[2].textContent = 'Contact';
-
-    // Header
-    headerTitle.textContent = 'Hello there!';
-
-    headerName[0].textContent = 'mohamed hossam';
-    headerName[1].textContent = 'mohamed hossam';
-    headerName[2].textContent = 'How are you?';
-
-    headerJob[0].textContent = 'frontend'
-    headerJob[1].textContent = 'developer'
-    
-    headerButtons[0].textContent = 'See My Projects';
-    headerButtons[1].textContent = 'See My Tasks';
-    
-    headerP.textContent = 'As a seasoned frontend developer, I specialize in transforming concepts into visually stunning and user-friendly websites. With an eye for detail and a flair for creativity'
-
-    document.body.classList.remove('arabic')
-
-    document.documentElement.dir = 'ltr'
-    document.documentElement.lang = 'en'
   }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const language = localStorage.getItem("lang") || "en"; 
+  setLanguage(language);
 });
-// End Translation
+
+const setLanguage = (language) => {
+  const elements = document.querySelectorAll("[data-translate]");
+  elements.forEach((element) => {
+    const translationKey = element.getAttribute("data-translate");
+    element.textContent = translations[language][translationKey];
+  });
+  document.dir = language === "ar" ? "rtl" : "ltr";
+};
+LangBtn.onclick = () => {
+  const language = localStorage.getItem("lang") || "en"; 
+  if (language === "en") {
+    setLanguage("ar");
+    localStorage.setItem("lang", "ar");
+    document.body.classList.add('arabic')
+  } else {
+    setLanguage("en");
+    localStorage.setItem("lang", "en");
+    document.body.classList.remove('arabic')
+  }
+}
